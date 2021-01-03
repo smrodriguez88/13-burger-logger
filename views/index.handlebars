@@ -9,7 +9,7 @@
 			  {{#each burger_data}}
 			  	{{#unless this.devoured}}
 				<div class="col-md-6 text-center mb-4">
-					<pre>{{this.id}} - {{this.burger_name}}</pre>
+					<pre>[{{this.id}}] {{this.burger_name}}</pre>
                     <img src="/assets/images/burger-only.png" alt="burger" width="50px"/>
                     <form class="devour-burger">
 					    <input type="hidden" class="id" type="text" value={{this.id}}><br>
@@ -24,7 +24,7 @@
             <h2 class="mb-5 buger-header">DEVOURED</h2>
 			  {{#each burger_data}}
 			  	{{#if this.devoured}}
-                    <pre>{{this.id}} - {{this.burger_name}}</pre>
+                    <pre>[{{this.id}}] {{this.burger_name}}</pre>
                     <img src="/assets/images/burger-only-dev.png" alt="burger" width="50px"/>
 				{{/if}}
 			  {{/each}}
