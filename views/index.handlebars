@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<img src="/assets/images/burger-logo.png" alt="burger" width="300px"/>
+		</div>
+		<div class="col-md-6 text-center burger-display">
+            <h2 class="mb-5 buger-header">DEVOUR ME</h2>
+			<div class="row">
+			  {{#each burger_data}}
+			  	{{#unless this.devoured}}
+				<div class="col-md-6 text-center mb-4">
+					<pre>{{this.id}} - {{this.burger_name}}</pre>
+                    <img src="/assets/images/burger-only.png" alt="burger" width="50px"/>
+                    <form class="devour-burger">
+					    <input type="hidden" class="id" type="text" value={{this.id}}><br>
+						<button type="submit" class="btn btn-sm btn-outline-danger">Devour Me!</button>
+					</form>
+				</div>
+				{{/unless}}
+			  {{/each}}
+			</div>
+		</div>
+		<div class="col-md-6 text-center burger-display">
+            <h2 class="mb-5 buger-header">DEVOURED</h2>
+			  {{#each burger_data}}
+			  	{{#if this.devoured}}
+                    <pre>{{this.id}} - {{this.burger_name}}</pre>
+                    <img src="/assets/images/burger-only-dev.png" alt="burger" width="50px"/>
+				{{/if}}
+			  {{/each}}
+		</div>  
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center burger-form">
+			<form action="/burgers" method="POST">
+				<input type="textarea" name="burger_name" value="{{this.value}}" id="add_burger" placeholder="Add your burger here">
+				<button type="submit" class="btn burger-btn btn-warning">Submit<img src="/assets/images/burger-only.png" alt="burger" width="30px"/></button>
+			</form>
+		</div>
+	</div>
+<div>

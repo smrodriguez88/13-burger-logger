@@ -1,0 +1,26 @@
+body {
+    background-color: tan;
+  }
+
+.burger-display {
+    border-style: solid;
+    border-color: #792220;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.burger-header {
+    color: #ffd987;
+}
+
+.burger-form {
+    align-items: baseline;
+    margin: 15px
+}
+
+.burger-btn {
+    border-style: solid;
+    border-color: #8a8a8a;
+    border-radius: 10px;
+}
+
